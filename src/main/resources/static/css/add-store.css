@@ -1,0 +1,110 @@
+* {
+    margin: 0 0;
+}
+
+body {
+    background: linear-gradient(to right, #6562CE, #89B5DA);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-block {
+    display: flex;
+    width: 40%;
+    background-color: #A6AAE9;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px #3038CC;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+label {
+    font-size: 18px;
+}
+
+.input-block {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-block input {
+    width: 95%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.submit-block {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.submit-block input {
+    width: 95%;
+    border-radius: 4px;
+    padding: 10px 0;
+    border: none;
+    font-weight: 600;
+}
+
+.submit-block input:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.add-block {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding: 10px 0;
+}
+
+.add-block div {
+    background-color: #6562CE;
+    padding: 10px;
+    border-radius: 4px;
+    margin-right: 16px;
+}
+
+.add-block div:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.nav-bar {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+}
+
+a button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
