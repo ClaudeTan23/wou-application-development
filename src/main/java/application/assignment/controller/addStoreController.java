@@ -22,9 +22,6 @@ public class addStoreController
     public AddStoreDAO store;
 
     @Autowired
-    TestingRepository t;
-
-    @Autowired
     public StoreRepository stores;
 
     @RequestMapping(value = "/add-store", method = RequestMethod.GET)
@@ -37,7 +34,8 @@ public class addStoreController
     public String addStore(Model model, Store storeVal)
     {
         // store.addStores(storeVal);
-        
+
+        stores.save(storeVal);
 
         return "redirect:get-store";
     }
