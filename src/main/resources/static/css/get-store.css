@@ -3,33 +3,232 @@
 }
 
 body {
-    background: linear-gradient(to right, #6562CE, #89B5DA);
+    background-color: #FAFAFA;
+}
+
+.main-container {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
-a {
-    text-decoration: none;
+.header-nav-bar {
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ECECEC;
+    color: #202020;
+    box-shadow: 0px 0px 10px 1px #808080;
 }
 
-a button {
+.logo-block {
+    display: flex;
+    padding: 10px 15px;
+}
+
+.logo-block>div {
+    font-size: 28px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 800;
+}
+
+.nav-link-block {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 25px;
+}
+
+.link-block {
     padding: 10px;
-    margin: 5px;
-    border-radius: 6px;
-    border: none;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
+    position: relative;
 }
 
-a button:hover {
-    opacity: 0.8;
+.link-block:hover {
     cursor: pointer;
 }
 
-.table-container {
+.link-block:hover div {
+    cursor: pointer;
+    width: 100%;
+}
+
+.link-block div {
+    width: 0%;
+    background-color: #202020;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.link-block a {
+    text-decoration: none;
+    color: #202020;
+}
+
+.store-link-container {
+    text-decoration: none;
+    color: #202020;
+}
+
+.store-header {
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.store-header div {
+    padding: 15px;
+    display: flex;
+}
+
+.store-header div > a {
+    text-decoration: none;
+}
+
+.store-header div > a > div {
+    padding: 15px;
+    display: flex;
+    font-weight: 600;
+    box-shadow: 0px 0px 2px 1px #202020;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.store-header div > a > div:hover {
+    box-shadow: 0px 0px 8px 1px #202020;
+    cursor: pointer;
+}
+
+.store-header > h1 {
+    padding: 10px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #202020;
+}
+
+.store-body {
+    width: 100%;
+    padding: 15px 0;
+    /* background-color: #6C72BB; */
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-evenly; */
+    gap: 20px;
+    overflow-x: hidden;
+}
+
+.store-name-block {
+    /* display: flex; */
+    padding: 10px;
+    width: 260px;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 40px;
+    /* white-space: pre-line; */
+}
+
+.store-control-block {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.store-control-block div:nth-child(1) {
+    background-color: #44DFEE;
+    width: 85px;
+    height: 35px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    color: #202020;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.store-control-block div:nth-child(2) {
+    background-color: #EE4444;
+    width: 85px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    color: #202020;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.store-control-block div:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.store-control-block a {
+    text-decoration: none;
+}
+
+.store-block:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 1px #808080;
+}
+
+.store-container {
+    padding: 10px;
+}
+
+.store-block {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ECECEC;
+    color: #202020;
+    box-shadow: 0px 0px 10px 1px #808080;
+    transition: all 0.2s;
+}
+
+.store-image {
+    display: flex;
     width: 100%;
-    padding: 10px 0;
+    height: 180px;
+}
+
+.store-image img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.empty-store-container {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-store-container > div {
+    font-weight: 600;
+    font-size: 32px;
+    padding: 10px;
+    width: 400px;
+    height: 180px;
+    box-shadow: 1px 1px 20px 2px #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 table {
@@ -85,4 +284,90 @@ tr:nth-child(odd) {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 600;
     box-shadow: 0px 0px 6px 2px #323ADA;
+}
+
+.modal-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(32, 32, 32, 0.9);
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-block {
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ECECEC;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px 2px #FAFAFA;
+}
+
+.delete-block-title {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-family:sans-serif;
+    color: #202020;
+}
+
+.delete-store-block {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    font-size: 28px;
+    font-weight: 600;
+    color: #202020;
+    overflow-y: auto;
+}
+
+.delete-form-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+}
+
+.delete-form-container input {
+    display: flex;
+    padding: 10px;
+    background-color: #EE4444;
+    border: none;
+    width: 100px;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    transition: all 0.1s;
+    color: #202020;
+}
+
+.delete-form-container div {
+    display: flex;
+    padding: 10px;
+    background-color: #FAFAFA;
+    border: none;
+    width: 100px;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    transition: all 0.1s;
+    color: #202020;
+}
+
+.delete-form-container input:hover, .delete-form-container div:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 1px #808080;
 }

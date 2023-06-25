@@ -10,15 +10,38 @@
 </head>
 
 <body>
-    <div class="nav-bar">
-        <a href="/get-store">
-            <button>Get Store</button>
-        </a>
-        <a href="/add-store">
-            <button>Add Store</button>
-        </a>
+    <div class="main-container">
+        <div class="header-nav-bar">
+            <div class="logo-block">
+                <div>One SG</div>
+            </div>
+            <div class="nav-link-block">
+                <div class="link-block">
+                    <a href="/">
+                        Home
+                        <div></div>
+                    </a>
+                </div>
+                <div class="link-block">
+                    <a href="/get-store">
+                        Stores
+                        <div></div>
+                    </a>
+                </div>
+                <div class="link-block">
+                    <a href="/about">
+                        About
+                        <div></div>
+                    </a>
+                </div>
+                <div class="link-block">Login</div>
+            </div>
+        </div>
+        <div class="body">
+            <img src="/images/g1.jpg" />
+            <div class="body-title">One Store Groceries</div>
+        </div>
     </div>
-    <h1>Home</h1>
 </body>
 
 </html>
