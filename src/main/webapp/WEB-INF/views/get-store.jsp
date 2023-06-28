@@ -8,6 +8,7 @@
     <title>Stores</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="/css/get-store.css">
+    <link rel="stylesheet" href="/css/header.css">
 </head>
 
 <body>
@@ -51,17 +52,40 @@
                     <div></div>
                 </a>
             </div>
-            <div class="link-block">Login</div>
+            <c:choose>
+                <c:when test="${roles.size() > 0 }">
+                    <div class="link-block">
+                        
+                            <form action="logout" method="POST">
+                                <input type="submit" value="Logout">
+                            </form>
+                            <div></div>
+                        
+                    </div>
+                </c:when>
+                <c:otherwise>
+                    <div class="link-block">
+                        <a href="/login">
+                            Login
+                            <div></div>
+                        </a>
+                    </div>
+                </c:otherwise>
+            </c:choose>
         </div>
     </div>
 
     <div class="store-header">
         <h1>Stores</h1>
-        <div>
-            <a href="/add-store">
-                <div>Add Store</div>
-            </a>
-        </div>
+        <c:choose>
+            <c:when test="${roles.size() == 2}">
+                <div>
+                    <a href="/add-store">
+                        <div>Add Store</div>
+                    </a>
+                </div>
+            </c:when>
+        </c:choose>
     </div>
 
     <c:choose>
@@ -76,12 +100,16 @@
                             <div class="store-name-block">
                                 <c:out value="${store[i].getName()}" />
                             </div>
-                            <div class="store-control-block">
-                                <a href="/edit-store/${store[i].id}" role="action">
-                                    <div role="action">Edit</div>
-                                </a>
-                                <div onclick='deleteStore("${store[i].id}", "${store[i].getName()}")' role="action">Delete</div>
-                            </div>
+                            <c:choose>
+                                <c:when test="${roles.size() == 2}">
+                                    <div class="store-control-block">
+                                        <a href="/edit-store/${store[i].id}" role="action">
+                                            <div role="action">Edit</div>
+                                        </a>
+                                        <div onclick='deleteStore("${store[i].id}", "${store[i].getName()}")' role="action">Delete</div>
+                                    </div>
+                                </c:when>
+                            </c:choose>
                         </div>
                     </div>
                 </c:forEach>

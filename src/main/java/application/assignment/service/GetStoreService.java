@@ -5,12 +5,11 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
-
-import application.assignment.entity.Store;
+import application.assignment.Exception.StoreNotFound;
 import application.assignment.repository.StoreRepository;
 
 @Service
-public class GetStoreService 
+public class GetStoreService
 {
     public String GetStore(Model model, StoreRepository store, Long id)
     {
@@ -25,7 +24,7 @@ public class GetStoreService
 
         } else 
         {
-            return "404";
+            throw new StoreNotFound();
         }
     }    
 }

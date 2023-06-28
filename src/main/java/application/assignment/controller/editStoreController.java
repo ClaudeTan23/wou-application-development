@@ -9,11 +9,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import application.assignment.CustomExceptionHandle.CustomHandle;
+import application.assignment.Exception.StoreNotFound;
 import application.assignment.entity.Store;
 import application.assignment.repository.StoreRepository;
 
 @Controller
-public class editStoreController 
+public class editStoreController extends CustomHandle
 {
     @Autowired
     public StoreRepository store;
@@ -23,11 +25,18 @@ public class editStoreController
     public String editStore(Model model, @PathVariable String id)
     {
         Long ids = Long.valueOf(id);
-        System.out.println(store.findAllById(ids).size());
-        System.out.print(id);
+        
+        if(store.findAllById(ids).size() > 0)
+        {
+            System.out.print(id);
 
-        model.addAttribute("store", store.findAllById(ids));
-        return "edit-store";
+            model.addAttribute("store", store.findAllById(ids));
+            return "edit-store";
+
+        } else 
+        {
+            throw new StoreNotFound();
+        }
     }    
 
     @RequestMapping(value = "/edit-store/{id}", method = RequestMethod.POST)

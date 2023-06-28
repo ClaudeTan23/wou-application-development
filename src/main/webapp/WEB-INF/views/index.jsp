@@ -34,7 +34,26 @@
                         <div></div>
                     </a>
                 </div>
-                <div class="link-block">Login</div>
+                <c:choose>
+                    <c:when test="${roles != null }">
+                        <div class="link-block">
+                
+                            <form action="logout" method="POST">
+                                <input type="submit" value="Logout">
+                            </form>
+                            <div></div>
+                
+                        </div>
+                    </c:when>
+                    <c:otherwise>
+                        <div class="link-block">
+                            <a href="/login">
+                                Login
+                                <div></div>
+                            </a>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
             </div>
         </div>
         <div class="body">

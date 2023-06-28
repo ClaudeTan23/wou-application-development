@@ -36,7 +36,14 @@
                         <div></div>
                     </a>
                 </div>
-                <div class="link-block">Login</div>
+                <div class="link-block">
+                
+                    <form action="logout" method="POST">
+                        <input type="submit" value="Logout">
+                    </form>
+                    <div></div>
+                
+                </div>
             </div>
         </div>
 
