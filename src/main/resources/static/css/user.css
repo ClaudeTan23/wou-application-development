@@ -1,0 +1,28 @@
+.user {
+    position: relative;
+}
+
+.user:hover .drop {
+    cursor: pointer;
+    display: flex;
+}
+
+.drop {
+    position: absolute;
+    margin-top: 4px;
+    background-color: #3759F0;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    width: 100px;
+    border-radius: 6px;
+    gap: 15px;
+}
+
+.drop div {
+    padding: 10px 0;
+}
+
+.drop div:hover {
+    opacity: 0.6;
+}
